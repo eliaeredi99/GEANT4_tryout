@@ -1,0 +1,4 @@
+/home/eliere99/g4_try_1/build/CMakeFiles/try_1.dir
+/home/eliere99/g4_try_1/build/CMakeFiles/g4_try_1.dir
+/home/eliere99/g4_try_1/build/CMakeFiles/edit_cache.dir
+/home/eliere99/g4_try_1/build/CMakeFiles/rebuild_cache.dir
