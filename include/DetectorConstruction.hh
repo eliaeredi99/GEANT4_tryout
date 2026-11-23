@@ -14,7 +14,7 @@
 #include "G4NistManager.hh"
 #include "G4VUserDetectorConstruction.hh"
 
-// class G4VPhysicalVolume;
+class G4VPhysicalVolume;
 
 // ': public' stands for inheritance in C++.
 // It means that the DetectorConstruction class is inheriting from the G4VUserDetectorConstruction class.
