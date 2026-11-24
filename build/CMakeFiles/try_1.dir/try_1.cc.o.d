@@ -686,4 +686,12 @@ CMakeFiles/try_1.dir/try_1.cc.o: /home/eliere99/g4_try_1/try_1.cc \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4EmStandardPhysics.hh \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4OpticalPhysics.hh \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4OpticalParameters.hh \
- /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VModularPhysicsList.hh
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VModularPhysicsList.hh \
+ /home/eliere99/g4_try_1/include/ActionInitialization.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VUserActionInitialization.hh \
+ /home/eliere99/g4_try_1/include/PrimaryGeneratorAction.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleGun.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VPrimaryGenerator.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleTable.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4Event.hh

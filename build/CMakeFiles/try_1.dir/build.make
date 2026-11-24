@@ -83,10 +83,24 @@ CMakeFiles/try_1.dir/try_1.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/try_1.dir/try_1.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliere99/g4_try_1/try_1.cc -o CMakeFiles/try_1.dir/try_1.cc.s
 
+CMakeFiles/try_1.dir/src/ActionInitialization.cc.o: CMakeFiles/try_1.dir/flags.make
+CMakeFiles/try_1.dir/src/ActionInitialization.cc.o: ../src/ActionInitialization.cc
+CMakeFiles/try_1.dir/src/ActionInitialization.cc.o: CMakeFiles/try_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/try_1.dir/src/ActionInitialization.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/try_1.dir/src/ActionInitialization.cc.o -MF CMakeFiles/try_1.dir/src/ActionInitialization.cc.o.d -o CMakeFiles/try_1.dir/src/ActionInitialization.cc.o -c /home/eliere99/g4_try_1/src/ActionInitialization.cc
+
+CMakeFiles/try_1.dir/src/ActionInitialization.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/try_1.dir/src/ActionInitialization.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliere99/g4_try_1/src/ActionInitialization.cc > CMakeFiles/try_1.dir/src/ActionInitialization.cc.i
+
+CMakeFiles/try_1.dir/src/ActionInitialization.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/try_1.dir/src/ActionInitialization.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliere99/g4_try_1/src/ActionInitialization.cc -o CMakeFiles/try_1.dir/src/ActionInitialization.cc.s
+
 CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o: CMakeFiles/try_1.dir/flags.make
 CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o: ../src/DetectorConstruction.cc
 CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o: CMakeFiles/try_1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o -MF CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o.d -o CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o -c /home/eliere99/g4_try_1/src/DetectorConstruction.cc
 
 CMakeFiles/try_1.dir/src/DetectorConstruction.cc.i: cmake_force
@@ -97,10 +111,24 @@ CMakeFiles/try_1.dir/src/DetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/try_1.dir/src/DetectorConstruction.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliere99/g4_try_1/src/DetectorConstruction.cc -o CMakeFiles/try_1.dir/src/DetectorConstruction.cc.s
 
+CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/try_1.dir/flags.make
+CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o: ../src/PrimaryGeneratorAction.cc
+CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/try_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o -MF CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o.d -o CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o -c /home/eliere99/g4_try_1/src/PrimaryGeneratorAction.cc
+
+CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliere99/g4_try_1/src/PrimaryGeneratorAction.cc > CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.i
+
+CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliere99/g4_try_1/src/PrimaryGeneratorAction.cc -o CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.s
+
 CMakeFiles/try_1.dir/src/physics.cc.o: CMakeFiles/try_1.dir/flags.make
 CMakeFiles/try_1.dir/src/physics.cc.o: ../src/physics.cc
 CMakeFiles/try_1.dir/src/physics.cc.o: CMakeFiles/try_1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/try_1.dir/src/physics.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/try_1.dir/src/physics.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/try_1.dir/src/physics.cc.o -MF CMakeFiles/try_1.dir/src/physics.cc.o.d -o CMakeFiles/try_1.dir/src/physics.cc.o -c /home/eliere99/g4_try_1/src/physics.cc
 
 CMakeFiles/try_1.dir/src/physics.cc.i: cmake_force
@@ -114,14 +142,18 @@ CMakeFiles/try_1.dir/src/physics.cc.s: cmake_force
 # Object files for target try_1
 try_1_OBJECTS = \
 "CMakeFiles/try_1.dir/try_1.cc.o" \
+"CMakeFiles/try_1.dir/src/ActionInitialization.cc.o" \
 "CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o" \
+"CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/try_1.dir/src/physics.cc.o"
 
 # External object files for target try_1
 try_1_EXTERNAL_OBJECTS =
 
 try_1: CMakeFiles/try_1.dir/try_1.cc.o
+try_1: CMakeFiles/try_1.dir/src/ActionInitialization.cc.o
 try_1: CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o
+try_1: CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o
 try_1: CMakeFiles/try_1.dir/src/physics.cc.o
 try_1: CMakeFiles/try_1.dir/build.make
 try_1: /home/eliere99/geant4/geant4-v11.4.3-install/lib/libG4Tree.so
@@ -163,7 +195,7 @@ try_1: /home/eliere99/geant4/geant4-v11.4.3-install/lib/libG4clhep.so
 try_1: /home/eliere99/geant4/geant4-v11.4.3-install/lib/libG4ptl.so.3.0.0
 try_1: /home/eliere99/geant4/geant4-v11.4.3-install/lib/libG4zlib.so
 try_1: CMakeFiles/try_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable try_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eliere99/g4_try_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable try_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/try_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

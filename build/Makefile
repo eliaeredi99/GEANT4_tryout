@@ -142,6 +142,30 @@ g4_try_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/g4_try_1.dir/build.make CMakeFiles/g4_try_1.dir/build
 .PHONY : g4_try_1/fast
 
+src/ActionInitialization.o: src/ActionInitialization.cc.o
+.PHONY : src/ActionInitialization.o
+
+# target to build an object file
+src/ActionInitialization.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/ActionInitialization.cc.o
+.PHONY : src/ActionInitialization.cc.o
+
+src/ActionInitialization.i: src/ActionInitialization.cc.i
+.PHONY : src/ActionInitialization.i
+
+# target to preprocess a source file
+src/ActionInitialization.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/ActionInitialization.cc.i
+.PHONY : src/ActionInitialization.cc.i
+
+src/ActionInitialization.s: src/ActionInitialization.cc.s
+.PHONY : src/ActionInitialization.s
+
+# target to generate assembly for a file
+src/ActionInitialization.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/ActionInitialization.cc.s
+.PHONY : src/ActionInitialization.cc.s
+
 src/DetectorConstruction.o: src/DetectorConstruction.cc.o
 .PHONY : src/DetectorConstruction.o
 
@@ -165,6 +189,30 @@ src/DetectorConstruction.s: src/DetectorConstruction.cc.s
 src/DetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/DetectorConstruction.cc.s
 .PHONY : src/DetectorConstruction.cc.s
+
+src/PrimaryGeneratorAction.o: src/PrimaryGeneratorAction.cc.o
+.PHONY : src/PrimaryGeneratorAction.o
+
+# target to build an object file
+src/PrimaryGeneratorAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.o
+.PHONY : src/PrimaryGeneratorAction.cc.o
+
+src/PrimaryGeneratorAction.i: src/PrimaryGeneratorAction.cc.i
+.PHONY : src/PrimaryGeneratorAction.i
+
+# target to preprocess a source file
+src/PrimaryGeneratorAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.i
+.PHONY : src/PrimaryGeneratorAction.cc.i
+
+src/PrimaryGeneratorAction.s: src/PrimaryGeneratorAction.cc.s
+.PHONY : src/PrimaryGeneratorAction.s
+
+# target to generate assembly for a file
+src/PrimaryGeneratorAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/PrimaryGeneratorAction.cc.s
+.PHONY : src/PrimaryGeneratorAction.cc.s
 
 src/physics.o: src/physics.cc.o
 .PHONY : src/physics.o
@@ -224,9 +272,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... g4_try_1"
 	@echo "... try_1"
+	@echo "... src/ActionInitialization.o"
+	@echo "... src/ActionInitialization.i"
+	@echo "... src/ActionInitialization.s"
 	@echo "... src/DetectorConstruction.o"
 	@echo "... src/DetectorConstruction.i"
 	@echo "... src/DetectorConstruction.s"
+	@echo "... src/PrimaryGeneratorAction.o"
+	@echo "... src/PrimaryGeneratorAction.i"
+	@echo "... src/PrimaryGeneratorAction.s"
 	@echo "... src/physics.o"
 	@echo "... src/physics.i"
 	@echo "... src/physics.s"
