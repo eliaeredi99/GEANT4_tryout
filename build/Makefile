@@ -166,6 +166,30 @@ src/DetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/DetectorConstruction.cc.s
 .PHONY : src/DetectorConstruction.cc.s
 
+src/physics.o: src/physics.cc.o
+.PHONY : src/physics.o
+
+# target to build an object file
+src/physics.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/physics.cc.o
+.PHONY : src/physics.cc.o
+
+src/physics.i: src/physics.cc.i
+.PHONY : src/physics.i
+
+# target to preprocess a source file
+src/physics.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/physics.cc.i
+.PHONY : src/physics.cc.i
+
+src/physics.s: src/physics.cc.s
+.PHONY : src/physics.s
+
+# target to generate assembly for a file
+src/physics.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/try_1.dir/build.make CMakeFiles/try_1.dir/src/physics.cc.s
+.PHONY : src/physics.cc.s
+
 try_1.o: try_1.cc.o
 .PHONY : try_1.o
 
@@ -203,6 +227,9 @@ help:
 	@echo "... src/DetectorConstruction.o"
 	@echo "... src/DetectorConstruction.i"
 	@echo "... src/DetectorConstruction.s"
+	@echo "... src/physics.o"
+	@echo "... src/physics.i"
+	@echo "... src/physics.s"
 	@echo "... try_1.o"
 	@echo "... try_1.i"
 	@echo "... try_1.s"

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o"
   "CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o.d"
+  "CMakeFiles/try_1.dir/src/physics.cc.o"
+  "CMakeFiles/try_1.dir/src/physics.cc.o.d"
   "CMakeFiles/try_1.dir/try_1.cc.o"
   "CMakeFiles/try_1.dir/try_1.cc.o.d"
   "try_1"

@@ -681,4 +681,9 @@ CMakeFiles/try_1.dir/try_1.cc.o: /home/eliere99/g4_try_1/try_1.cc \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4NistMaterialBuilder.hh \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4Pow.hh \
  /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4Exp.hh \
- /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh \
+ /home/eliere99/g4_try_1/include/physics.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4EmStandardPhysics.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4OpticalPhysics.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4OpticalParameters.hh \
+ /home/eliere99/geant4/geant4-v11.4.3-install/include/Geant4/G4VModularPhysicsList.hh

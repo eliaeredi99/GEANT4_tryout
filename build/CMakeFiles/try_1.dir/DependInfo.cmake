@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/eliere99/g4_try_1/src/DetectorConstruction.cc" "CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o" "gcc" "CMakeFiles/try_1.dir/src/DetectorConstruction.cc.o.d"
+  "/home/eliere99/g4_try_1/src/physics.cc" "CMakeFiles/try_1.dir/src/physics.cc.o" "gcc" "CMakeFiles/try_1.dir/src/physics.cc.o.d"
   "/home/eliere99/g4_try_1/try_1.cc" "CMakeFiles/try_1.dir/try_1.cc.o" "gcc" "CMakeFiles/try_1.dir/try_1.cc.o.d"
   )
 
