@@ -10,6 +10,7 @@
 // Written by me
 #include "DetectorConstruction.hh"
 #include "physics.hh"
+#include "ActionInitialization.hh"
 
 // The main function is the entry point of the program. It is where the execution of the program begins.
 // The main function takes two parameters: argc (argument count) and argv (argument vector).
@@ -18,11 +19,14 @@ int main(int argc, char** argv) {
     // runMananger is a pointer to the G4RunManager class, which is responsible for managing the simulation run.
     G4RunManager *runManager = new G4RunManager();
 
-    // Set the initialization of the physical world, which is defined in the DetectorConstruction class.
+    // Sets the initialization of the physical world, which is defined in the DetectorConstruction class.
     // The DetectorConstruction method is declared in the DetectorConstruction.hh file and defined in the DetectorConstruction.cc file.
     runManager->SetUserInitialization(new DetectorConstruction());
-    // Set the initialization of the physics list, which is defined in the Custom_PhysicsList class.
+    // Sets the initialization of the physics list, which is defined in the Custom_PhysicsList class.
     runManager->SetUserInitialization(new Custom_PhysicsList());
+    // Sets the initialization of the user actions (e.g. primary generator, run/event/stepping actions), which is defined in the Custom_ActionInitialization class.
+    runManager->SetUserInitialization(new Custom_ActionInitialization());
+
     // GEANT4 check if everything necessary is initialized and run the simulation.
     runManager->Initialize();
 
@@ -37,6 +41,9 @@ int main(int argc, char** argv) {
     UImanager->ApplyCommand("/vis/drawVolume");
     // Set the viewpoint vector for the visualization. Not particularly useful but fun.
     UImanager->ApplyCommand("/vis/viewer/set/viewpointVector 0 0 0");
+    UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
+    UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
+
     ui->SessionStart();
     
     return 0;

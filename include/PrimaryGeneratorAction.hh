@@ -1,0 +1,22 @@
+#ifndef PrimaryGeneratorAction_hh
+#define PrimaryGeneratorAction_hh
+
+#include "G4VUserPrimaryGeneratorAction.hh"
+#include "G4ParticleGun.hh"
+#include "G4ParticleTable.hh"
+#include "G4Event.hh"
+#include "G4SystemOfUnits.hh"
+
+class Custom_PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction{
+    public:
+        Custom_PrimaryGeneratorAction();
+        ~Custom_PrimaryGeneratorAction();
+
+        virtual void GeneratePrimaries(G4Event*);
+
+    private:
+        G4ParticleGun *fParticleGun;
+};
+
+
+#endif
