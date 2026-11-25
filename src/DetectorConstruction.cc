@@ -15,11 +15,15 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
     G4Material *Diamond = new G4Material("Diamond", 3.520 *g/cm3, 1);
     Diamond->AddElement(nist->FindOrBuildElement("C"), 1);
 
-    G4Material *H2O = new G4Material("H20", 1.000 *g/m3, 2);
+    G4Material *H2O = new G4Material("H20", 1.000 *g/cm3, 2);
     H2O->AddElement(nist->FindOrBuildElement("H"), 2);
     H2O->AddElement(nist->FindOrBuildElement("O"), 1);
 
-    G4Element *Tungsten = nist->FindOrBuildElement("W");
+    G4Material *Tungsten = new G4Material("Tungsten", 19.3 *g/cm3, 1);
+    Tungsten->AddElement(nist->FindOrBuildElement("W"), 1);
+    
+    G4Material *Copper = new G4Material("Cu", 8.96 *g/cm3, 1);
+    Copper->AddElement(nist->FindOrBuildElement("Cu"), 1);
 
     // Find or build the material for the world volume (air)
     G4Material *worldMat = nist->FindOrBuildMaterial("G4_AIR");
@@ -33,7 +37,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
     G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
 
     // PHYSICAL WORLD: Place the logical volume in the physical world defininf rotation and mother volume.
-    // It requires several parameters (rotation, position, logical volume, name, mother volume (no, this is the mother volume),
+    // It requires several parameters (rotation, position, logical volume, name, mother volume ('0', this is the mother volume),
     // need boolean operator?, copy number, check overlaps (always true, slows down simulation but necessary))
     G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
     
@@ -46,6 +50,60 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
     G4Box *solidDetector = new G4Box("diamond_detector", 0.0025/2 *m, 0.0025/2 *m, 0.0005/2 *m);
     G4LogicalVolume *logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
     G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.025 *m), logicDetector, "physDetector", logicPhantom, false, 0, true);
+
+    // Collimator definition via boolean subtraction: Tungsten plate subtracted of a volume representing the hole:
+    // IT IS IMPORTATN THAT THE VOLUME SUBTRACTED EXCEEDS THE BOUNDARIES OF THE FIRST OBJECT, AS A-B YIELDS EVERY POINT OF A NOT INCLUDED IN B AND GEANT4 CANNOT RESOLVES OVERLAPPING BOUNDARIES
+    G4Box *solidPlate = new G4Box("collimator", 0.25/2 *m, 0.25/2 *m, 0.10/2 *m);
+    G4Box *solidHole = new G4Box("hole", 0.03/2 *m, 0.03/2 *m, 0.20/2 *m);
+    G4SubtractionSolid *solidCollimator = new G4SubtractionSolid("Collimator", solidPlate, solidHole);
+    G4LogicalVolume *logicCollimator = new G4LogicalVolume(solidCollimator, Tungsten, "logicCollimator");
+    G4VPhysicalVolume *physCollimator = new G4PVPlacement(0, G4ThreeVector(0., 0., -0.03 *m), logicCollimator, "physCollimator", logicWorld, false, 0, true);
+
+    // Target definition, it is composed of two different cilinder of tungsten and copper that i unite in a common mother volume of air.
+    // The G4Tubs class requires ("name", r_int, r_ext, half thickness, sector start angle, sector total angle)
+    G4Tubs *solidTargetContainer = new G4Tubs("target_container", 0., 0.026/2 *m, ((0.001/2 + 0.002/2) + 0.001) *m, 0 *deg, 360 *deg);
+    G4LogicalVolume *logicTargetContainer = new G4LogicalVolume(solidTargetContainer, H2O, "logicTargetContainer");
+    G4VPhysicalVolume *physTargetContainer = new G4PVPlacement(0, G4ThreeVector(0., 0., -0.50 *m), logicTargetContainer, "physTargetContainer", logicWorld, false, 0, true); 
+
+    G4Tubs *solidTargetW = new G4Tubs("Target_W", 0., 0.025/2 *m, 0.001/2 *m, 0 *deg, 360 *deg);
+    G4LogicalVolume *logicTargetW = new G4LogicalVolume(solidTargetW, Tungsten, "logicTargetW");
+    G4VPhysicalVolume *physTargetW = new G4PVPlacement(0, G4ThreeVector(0., 0., -0.0015 *m), logicTargetW, "physTargetW", logicTargetContainer, false, 0, true); 
+
+    G4Tubs *solidTargetCu = new G4Tubs("Target_Cu", 0., 0.025/2 *m, 0.002/2 *m, 0 *deg, 360 *deg);
+    G4LogicalVolume *logicTargetCu = new G4LogicalVolume(solidTargetCu, Copper, "logicTargetCu");
+    G4VPhysicalVolume *physTargetCu = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.00055 *m), logicTargetCu, "physTargetCu", logicTargetContainer, false, 0, true); 
+
+
+    // // GENERATATED BY CLAUDE TO COLOUR THE VOLUMES AND HELP ME UNDERSTAND EVENTUAL ERRORS IN THE TARGET DEFINITION 
+    // // Container d'aria del target: wireframe grigio, per vederne i confini
+    // auto *visContainer = new G4VisAttributes(G4Colour(0.7, 0.7, 0.7, 0.5));
+    // visContainer->SetForceSolid(true);
+    // logicTargetContainer->SetVisAttributes(visContainer);
+
+    // // Tungsteno: blu, solido
+    // auto *visW = new G4VisAttributes(G4Colour(0.1, 0.2, 0.9));
+    // visW->SetForceSolid(true);
+    // logicTargetW->SetVisAttributes(visW);
+
+    // // Rame: arancione, solido
+    // auto *visCu = new G4VisAttributes(G4Colour(0.9, 0.5, 0.1));
+    // visCu->SetForceSolid(true);
+    // logicTargetCu->SetVisAttributes(visCu);
+
+    // // Collimatore: grigio scuro, semitrasparente
+    // auto *visColl = new G4VisAttributes(G4Colour(0.3, 0.3, 0.3, 0.5));
+    // visColl->SetForceSolid(true);
+    // logicCollimator->SetVisAttributes(visColl);
+
+    // // Fantoccio: azzurro trasparente
+    // auto *visPhantom = new G4VisAttributes(G4Colour(0.0, 0.7, 1.0, 0.3));
+    // visPhantom->SetForceSolid(true);
+    // logicPhantom->SetVisAttributes(visPhantom);
+
+    // // Detector: rosso pieno
+    // auto *visDet = new G4VisAttributes(G4Colour(1.0, 0.0, 0.0));
+    // visDet->SetForceSolid(true);
+    // logicDetector->SetVisAttributes(visDet);
 
 
 
