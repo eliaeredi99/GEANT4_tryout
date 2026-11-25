@@ -1,0 +1,2 @@
+# Ignore the build folder with the executive and other files necessary to the run that get created at every 'make' command
+build/
