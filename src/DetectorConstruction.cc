@@ -1,4 +1,5 @@
 #include "DetectorConstruction.hh"
+#include "Detector.hh"
 
 // Initialize the constructor and destructor for the DetectorConstruction class
 // inherited from the G4VUserDetectorConstruction class in DetectorConstruction.hh.
@@ -15,7 +16,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
     G4Material *Diamond = new G4Material("Diamond", 3.520 *g/cm3, 1);
     Diamond->AddElement(nist->FindOrBuildElement("C"), 1);
 
-    G4Material *H2O = new G4Material("H20", 1.000 *g/cm3, 2);
+    G4Material *H2O = new G4Material("H2O", 1.000 *g/cm3, 2);
     H2O->AddElement(nist->FindOrBuildElement("H"), 2);
     H2O->AddElement(nist->FindOrBuildElement("O"), 1);
 
@@ -48,8 +49,15 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
 
     // Detector definition, physDetector needs the definition of the logic form of the mother volume (logicPhantom, GEANT4 can't handle volume overlaps. One volume needs to be completely contained to use the mother volume solution)
     G4Box *solidDetector = new G4Box("diamond_detector", 0.0025/2 *m, 0.0025/2 *m, 0.0005/2 *m);
-    G4LogicalVolume *logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
-    G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.025 *m), logicDetector, "physDetector", logicPhantom, false, 0, true);
+    //G4LogicalVolume *logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
+    //G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.025 *m), logicDetector, "physDetector", logicPhantom, false, 0, true); This was to define an object made of diamond, now we want sensitive volume!
+    logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
+    for(G4int i=0; i<100; i++){
+        for(G4int j=0; j<100; j++){
+            G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(((i+0.5)/100-0.5)*0.0025 *m, ((j+0.5)/100-0.5)*0.0025 *m, 0.025*m), logicDetector, "physDetector", logicPhantom, false, j+i*100, true);
+        }
+    };
+
 
     // Collimator definition via boolean subtraction: Tungsten plate subtracted of a volume representing the hole:
     // IT IS IMPORTATN THAT THE VOLUME SUBTRACTED EXCEEDS THE BOUNDARIES OF THE FIRST OBJECT, AS A-B YIELDS EVERY POINT OF A NOT INCLUDED IN B AND GEANT4 CANNOT RESOLVES OVERLAPPING BOUNDARIES
@@ -109,5 +117,10 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
 
     // Return the physical volume of the world
     return physWorld;
+}
 
+
+void DetectorConstruction::ConstructSDandField(){
+    Custom_SensitiveDetector *sensDet = new Custom_SensitiveDetector("SensitiveDetector");
+    logicDetector->SetSensitiveDetector(sensDet);
 }

@@ -34,6 +34,12 @@ class DetectorConstruction : public G4VUserDetectorConstruction {
         // It is actually a pure virtual function in the base class G4VUserDetectorConstruction
         // which means that it is not necessary to write 'virtual' in the derived class, but it is a good practice to do so.
         virtual G4VPhysicalVolume *Construct();
+    
+    private:
+
+        G4LogicalVolume *logicDetector;
+        virtual void ConstructSDandField();
+
 };
 
 #endif  //Close the #ifndef statement
