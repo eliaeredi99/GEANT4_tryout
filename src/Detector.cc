@@ -10,5 +10,25 @@ G4bool Custom_SensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *
 
     G4ThreeVector posPhoton = preStepPoint->GetPosition();
     G4cout << "Photon position: " << posPhoton << G4endl;
+
+    const G4VTouchable *touchable = aStep->GetPreStepPoint()->GetTouchable();
+    G4int copyNo = touchable->GetCopyNumber();
+
+    G4cout << "Copy Number: " << copyNo << G4endl;
+
+    G4VPhysicalVolume *physVol = touchable->GetVolume();
+    G4ThreeVector posDetector = physVol->GetTranslation();
+
+    G4cout << "Detector Position: " << posDetector << G4endl;
+    
+    G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+
+    G4AnalysisManager *man = G4AnalysisManager::Instance();
+    man->FillNtupleIColumn(0, evt);
+    man->FillNtupleDColumn(1, posDetector[0]);
+    man->FillNtupleDColumn(2, posDetector[1]);
+    man->FillNtupleDColumn(3, posDetector[2]);
+    man->AddNtupleRow(0);
+
     return true;
 }

@@ -1,7 +1,7 @@
 #include "PrimaryGeneratorAction.hh"
 
 Custom_PrimaryGeneratorAction::Custom_PrimaryGeneratorAction(){
-    fParticleGun = new G4ParticleGun(100);
+    fParticleGun = new G4ParticleGun(1000);
 };
 Custom_PrimaryGeneratorAction::~Custom_PrimaryGeneratorAction(){
     delete fParticleGun;

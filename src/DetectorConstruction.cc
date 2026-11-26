@@ -48,7 +48,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct() // Define the 'Construct' m
     G4VPhysicalVolume *physPhantom = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.475 *m), logicPhantom, "physPhantom", logicWorld, false, 0, true);
 
     // Detector definition, physDetector needs the definition of the logic form of the mother volume (logicPhantom, GEANT4 can't handle volume overlaps. One volume needs to be completely contained to use the mother volume solution)
-    G4Box *solidDetector = new G4Box("diamond_detector", 0.0025/2 *m, 0.0025/2 *m, 0.0005/2 *m);
+    G4Box *solidDetector = new G4Box("diamond_detector", 0.025/2 *m, 0.025/2 *m, 0.0005/2 *m);
     //G4LogicalVolume *logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
     //G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.025 *m), logicDetector, "physDetector", logicPhantom, false, 0, true); This was to define an object made of diamond, now we want sensitive volume!
     logicDetector = new G4LogicalVolume(solidDetector, Diamond, "logicDetector");
